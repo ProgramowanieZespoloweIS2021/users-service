@@ -1,1 +1,10 @@
 # java-repository-template
+
+### How to finish setting up java repository
+
+* Register repository to [codecov.io](https://app.codecov.io/)
+* Create badge for code coverage. Copy from:`https://app.codecov.io/gh/<user>/<repository>>/settings/badge`
+* Create badge for CI action 
+```
+![CI/CD](https://github.com/<user>/<repository>/actions/workflows/ci.yml/badge.svg)
+```
