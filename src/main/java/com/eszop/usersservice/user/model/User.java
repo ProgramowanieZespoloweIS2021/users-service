@@ -20,8 +20,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String username;
-
     private String firstName;
 
     private String surname;

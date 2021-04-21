@@ -1,14 +1,11 @@
 package com.eszop.usersservice.user.dto;
 
-import com.eszop.usersservice.user.model.UserId;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
-
-import javax.persistence.EmbeddedId;
 
 @Builder(builderClassName = "Builder", toBuilder = true)
 @Getter
@@ -17,9 +14,7 @@ import javax.persistence.EmbeddedId;
 @JsonDeserialize(builder = UserDTO.Builder.class)
 public class UserDTO {
 
-    private UserId id;
-
-    private String username;
+    private Long id;
 
     private String firstName;
 
