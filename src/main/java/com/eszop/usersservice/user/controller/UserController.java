@@ -2,6 +2,7 @@ package com.eszop.usersservice.user.controller;
 
 import com.eszop.usersservice.user.dto.UserDTO;
 import com.eszop.usersservice.user.dto.UserDTOMapper;
+import com.eszop.usersservice.user.model.User;
 import com.eszop.usersservice.user.model.UserId;
 import com.eszop.usersservice.user.service.UserService;
 import org.springframework.http.HttpStatus;
@@ -35,9 +36,16 @@ public class UserController {
         userService.deleteUserById(id);
     }
 
+    @GetMapping("/{id}")
+    @ResponseBody
+    public User getUserById(@PathVariable Long id) {
+        return userService.findById(id);
+    }
+
     @GetMapping
     @ResponseBody
     public List<UserDTO> getUsers(@RequestParam(required = false) String email){
+        //TODO enable calls only by auth service
         if (email != null && !email.isEmpty()) {
             return Collections.singletonList(UserDTOMapper.map(userService.findByEmail(email)));
         }
