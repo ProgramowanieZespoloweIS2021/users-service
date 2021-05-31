@@ -1,7 +1,7 @@
 package com.eszop.usersservice.user.service;
 
 import com.eszop.usersservice.user.model.UserTable;
-import com.eszop.usersservice.user.model.UserId;
+import com.eszop.usersservice.user.model.UserTableId;
 import com.eszop.usersservice.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -35,7 +35,7 @@ public class UserService {
     }
 
 
-    public void deleteUserById(UserId id) {
+    public void deleteUserById(UserTableId id) {
         UserTable user = userRepository.getOne(id);
         userRepository.delete(user);
     }
