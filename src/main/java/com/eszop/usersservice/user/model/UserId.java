@@ -8,12 +8,12 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @ToString
 @Getter
-public class UserTableId implements Serializable {
+public class UserId implements Serializable {
 
     private final Long value;
 
-    public static UserTableId of(Long value) {
-        return new UserTableId(value);
+    public static UserId of(Long value) {
+        return new UserId(value);
     }
 
 }

@@ -2,8 +2,8 @@ package com.eszop.usersservice.user.controller;
 
 import com.eszop.usersservice.user.dto.UserDTO;
 import com.eszop.usersservice.user.dto.UserDTOMapper;
-import com.eszop.usersservice.user.model.UserTable;
-import com.eszop.usersservice.user.model.UserTableId;
+import com.eszop.usersservice.user.model.User;
+import com.eszop.usersservice.user.model.UserId;
 import com.eszop.usersservice.user.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,13 +33,13 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable UserTableId id) {
+    public void deleteUser(@PathVariable UserId id) {
         userService.deleteUserById(id);
     }
 
     @GetMapping("/{id}")
     @ResponseBody
-    public UserTable getUserById(@PathVariable Long id) {
+    public User getUserById(@PathVariable Long id) {
         return userService.findById(id);
     }
 

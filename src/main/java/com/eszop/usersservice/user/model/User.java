@@ -13,9 +13,8 @@ import javax.persistence.*;
 @EqualsAndHashCode
 @ToString
 @Entity
-@Table(name = "user_table")
-public class UserTable {
-
+@Table(name = "user_security")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
