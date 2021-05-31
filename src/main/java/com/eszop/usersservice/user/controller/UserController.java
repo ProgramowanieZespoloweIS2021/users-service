@@ -2,7 +2,7 @@ package com.eszop.usersservice.user.controller;
 
 import com.eszop.usersservice.user.dto.UserDTO;
 import com.eszop.usersservice.user.dto.UserDTOMapper;
-import com.eszop.usersservice.user.model.User;
+import com.eszop.usersservice.user.model.UserTable;
 import com.eszop.usersservice.user.model.UserId;
 import com.eszop.usersservice.user.service.UserService;
 import org.springframework.http.HttpStatus;
@@ -10,9 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
 import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -41,7 +39,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public User getUserById(@PathVariable Long id) {
+    public UserTable getUserById(@PathVariable Long id) {
         return userService.findById(id);
     }
 

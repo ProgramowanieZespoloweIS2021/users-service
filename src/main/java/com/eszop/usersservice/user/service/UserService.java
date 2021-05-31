@@ -1,6 +1,6 @@
 package com.eszop.usersservice.user.service;
 
-import com.eszop.usersservice.user.model.User;
+import com.eszop.usersservice.user.model.UserTable;
 import com.eszop.usersservice.user.model.UserId;
 import com.eszop.usersservice.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -15,28 +15,28 @@ public class UserService {
     private final UserRepository userRepository;
 
 
-    public void save(User user) {
-        userRepository.save(user);
+    public void save(UserTable userTable) {
+        userRepository.save(userTable);
     }
 
 
-    public User findByEmail(String email) {
+    public UserTable findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 
 
-    public User findById(Long id) {
+    public UserTable findById(Long id) {
         return userRepository.findById(id);
     }
 
 
-    public List<User> findAll() {
+    public List<UserTable> findAll() {
         return userRepository.findAll();
     }
 
 
     public void deleteUserById(UserId id) {
-        User user = userRepository.getOne(id);
+        UserTable user = userRepository.getOne(id);
         userRepository.delete(user);
     }
 }
